@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Smart Home Chat App</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://cdn.pubnub.com/pubnub-3.16.5.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="homeIndex.js"></script>
+    </head>
+    <style type="text/css">
+        #bedroom {
+            -ms-transform: rotate(-90deg); /* IE 9 */
+            -webkit-transform: rotate(-90deg); /* Safari */
+            transform: rotate(-90deg); /* Standard syntax */
+        }
+        #kitchen {
+            -ms-transform: rotate(-180deg); /* IE 9 */
+            -webkit-transform: rotate(-180deg); /* Safari */
+            transform: rotate(-180deg); /* Standard syntax */
+        }
+        #livingrm {
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -webkit-transform: rotate(90deg); /* Safari */
+            transform: rotate(90deg); /* Standard syntax */
+        }
+        #portico {
+            -ms-transform: rotate(0deg); /* IE 9 */
+            -webkit-transform: rotate(0deg); /* Safari */
+            transform: rotate(0deg); /* Standard syntax */
+        }
+        #children {
+            -ms-transform: rotate(-90deg); /* IE 9 */
+            -webkit-transform: rotate(-90deg); /* Safari */
+            transform: rotate(-90deg); /* Standard syntax */
+        }
+    </style>
+    <body>
+        <div style="height:500px;width:600px;"> 
+            <img src="img/HousePlan.svg" style='height: 100%; width: 100%; object-fit: contain'>
+        
+            <svg  id="bedroom" style="height:30px;width:30px;position: absolute; top:130px; left:527px;" class="fancy-bulb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                <g>
+                    <path id="bedroombulb" fill="#FFDB55" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="outline">
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"/>
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"/>
+                    <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6"/>
+                    <path fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="highlight">
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"/>
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"/>
+                </g>
+            </svg>
+        
+            <svg  id="kitchen" style="height:30px;width:30px;position: absolute; top:80px; left:120px;" class="fancy-bulb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                <g>
+                    <path id="kitchenbulb" fill="#FFDB55" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="outline">
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"/>
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"/>
+                    <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6"/>
+                    <path fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="highlight">
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"/>
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"/>
+                </g>
+            </svg>
+        
+            <svg  id="livingrm" style="height:30px;width:30px;position: absolute; top:160px; left:180px;" class="fancy-bulb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                <g>
+                    <path id="livingroombulb" fill="#FFDB55" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="outline">
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"/>
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"/>
+                    <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6"/>
+                    <path fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="highlight">
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"/>
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"/>
+                </g>
+            </svg>
+        
+            <svg  id="children" style="height:30px;width:30px;position: absolute; top:320px; left:170px;" class="fancy-bulb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                <g>
+                    <path id="childrenroombulb" fill="#FFDB55" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="outline">
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"/>
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"/>
+                    <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6"/>
+                    <path fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="highlight">
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"/>
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"/>
+                </g>
+            </svg>
+        
+            <svg  id="portico" style="height:30px;width:30px;position: absolute; top:305px; left:400px;" class="fancy-bulb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                <g>
+                    <path id="porticobulb" fill="#FFDB55" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="outline">
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"/>
+                    <path fill="#F1F2F2" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"/>
+                    <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6"/>
+                    <path fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"/>
+                </g>
+                <g id="highlight">
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"/>
+                    <path fill="#FFDB55" stroke="#FFFFFF" stroke-width="21.0124" stroke-linecap="round" stroke-miterlimit="10" d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"/>
+                </g>
+            </svg>
+        </div>
+    </body>
+</html>

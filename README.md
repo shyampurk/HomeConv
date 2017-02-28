@@ -70,6 +70,9 @@ Step 9 : Follow the same procedure to create for "turnoff" and "is" intents
 
 Step 10 : Create one more node called the "offtopic".
 	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_27.png)
-
+Step 11 : Create the anything else node for any other irrelevant messages.
+	Enter the name and select the condition "anything_else(create new condition)" under trigger and the response
+	will be "sorry i am not trained for this question".
+	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_27.png)
 
 

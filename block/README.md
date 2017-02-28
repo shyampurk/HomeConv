@@ -4,8 +4,7 @@
 Step 1 : Login to the Pubnub account with the valid credentials.<br>
 Step 2 : Click the "CREATE NEW APP" by giving a name to your APP.<br>         
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_1.png)
-         ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_2.png)
-         
+         ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_2.png)         
          You can see the newly created APP in the page.<br>
 Step 3 : Click on the newly created APP.<br>
          You can see the Demo keyset for the new application created.

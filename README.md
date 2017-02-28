@@ -21,8 +21,7 @@ Step 4 : Click on the create button, then enter the name for the workspace
 Step 5 : Open the created workspace and click on Intents start entering the intents.
 	Step 5.1 : You can enter the intents like following picture (following picture shown for the intent "turnon")
 	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_7.png)
-	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_8.png)
-		
+	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_8.png)		
 	Step 5.2 : You can follow the same procedure for the remaining intents.
 	![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_9.png)
 

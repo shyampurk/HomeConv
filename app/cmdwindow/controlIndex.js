@@ -1,16 +1,15 @@
-$(document).ready(function () {
-	
+/************************************************************************
+	SMART HOME APPLICATION - MONITOR & CONTROL 
+*************************************************************************/
 	var pubnub = PUBNUB({
 	    publish_key : 'pub-c-578b72c9-0ca2-4429-b7d4-313bbdf9b335',
 	    subscribe_key : 'sub-c-471f5e36-e1ef-11e6-ac69-0619f8945a4f'
 	});
-	
-	var welcome_pub_msg = {"Command":"start"}
-	
-	pub_publish(welcome_pub_msg);
 
-	pub_subscribe();
-
+/************************************************************************
+	FUNCTION NAME : pub_subscribe()
+    DESCRIPTION   : Subscribe's to the control channel
+*************************************************************************/	
 	function pub_subscribe(){
 		pubnub.subscribe({
 		    channel : "smarthome_response",
@@ -24,6 +23,10 @@ $(document).ready(function () {
 		});
 	}; 
 
+/************************************************************************
+	FUNCTION NAME : message_notification()
+    DESCRIPTION   : Receives the notification from block and displays
+*************************************************************************/
 	function message_notification(m){
 		
 		$("#textInput").val('');
@@ -36,14 +39,11 @@ $(document).ready(function () {
 			$("#respMsg").text(m.Message +" bulb");
 		}
 	};
-	
-	$("#textSubmit").click(function() {
-		var controlMsg = $("#textInput").val();
-		var pub_msg = {"Command":controlMsg}
-		pub_publish(pub_msg);
-		$("#textInput").val('');
-	});
 
+/*********************************************************************************
+	FUNCTION NAME : pub_publish()
+    DESCRIPTION   : publish control command to block  
+**********************************************************************************/
 	function pub_publish(pub_msg){
 		pubnub.publish({
 		    channel : "smarthome_request",
@@ -54,4 +54,19 @@ $(document).ready(function () {
 		});
 	};
 
+
+$(document).ready(function () {
+		
+	var welcome_pub_msg = {"Command":"start"}
+	
+	pub_publish(welcome_pub_msg);
+
+	pub_subscribe();
+	
+	$("#textSubmit").click(function() {
+		var controlMsg = $("#textInput").val();
+		var pub_msg = {"Command":controlMsg}
+		pub_publish(pub_msg);
+		$("#textInput").val('');
+	});
 });

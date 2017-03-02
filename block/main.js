@@ -43,31 +43,7 @@ export default (request) => {
     http_options.body = {"input":{"text":request.message.Command},"context":{}};
 
 
-    /*
-        Name - broadcastMessage
-        Description - Function used to send message to users via pubnub
-        Parameters - pubchannel : Channel for braodcasting the message
-                     message : Message to be sent to users
-
-    */
-    function BroadcastMessage(pubchannel,message)
-
-        {
-
-            // Broadcasting the Message to the User.
-                
-                pubnub.publish({
-                channel   : pubchannel,
-                message   : message,
-                callback  : function(e) { 
-                    console.log( "SUCCESS!", e );
-                },
-                error     : function(e) { 
-                    console.log( "FAILED! RETRY PUBLISH!", e );
-                }
-            }); 
-
-        }   
+       
 
     // Checking for the initial message of the conversation. 
     if (request.message.Command == "start"){
@@ -99,6 +75,32 @@ export default (request) => {
           conv_call(http_options); 
         }    
     });// db call ending    
+
+    /*
+        Name - broadcastMessage
+        Description - Function used to send message to users via pubnub
+        Parameters - pubchannel : Channel for braodcasting the message
+                     message : Message to be sent to users
+
+    */
+    function BroadcastMessage(pubchannel,message)
+
+        {
+
+            // Broadcasting the Message to the User.
+                
+                pubnub.publish({
+                channel   : pubchannel,
+                message   : message,
+                callback  : function(e) { 
+                    console.log( "SUCCESS!", e );
+                },
+                error     : function(e) { 
+                    console.log( "FAILED! RETRY PUBLISH!", e );
+                }
+            }); 
+
+        }
 
 
     /*

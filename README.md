@@ -24,6 +24,10 @@ Step 5.1 : You can enter the intents like following picture (following picture s
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_8.png)		
 Step 5.2 : You can follow the same procedure for the remaining intents.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_9.png)
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_turnoff.png)
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_is.png)
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_offtopic.png)
+Note : For "offtopic" intent give atleast one random choice, for example "asdf".
 
 Step 6 : Click on the Entities and click on "Create new" and start entering the entities.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_10.png)

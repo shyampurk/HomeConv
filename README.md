@@ -20,7 +20,7 @@ Step 4 : Click on the create button, then enter the name for the workspace
 
 Step 4.1 : Once the workspace is created.<br>
 Click the menu icon in the upper-right corner of the tile for the created workspace, and then select View details.
-![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspacedetails.png)
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspacedetails.png)<br>
 Step 4.2 : Then copy the workspae id and then paste in the main.js code in line number 23 for the variable "url".<br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspaceid.png)
 Step 4.3 : Replace the highlighted id with your workspace id.<br>
@@ -34,9 +34,9 @@ Step 5.2 : You can follow the same procedure for the remaining intents.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_turnoff.png)
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_is.png)
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_offtopic.png)
+Note : For "offtopic" intent give atleast one random choice, for example "asdf".
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_9.png)
 
-Note : For "offtopic" intent give atleast one random choice, for example "asdf".
 
 Step 6 : Click on the Entities and click on "Create new" and start entering the entities.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_10.png)

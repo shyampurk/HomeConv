@@ -19,7 +19,7 @@ Step 4 : Click on the create button, then enter the name for the workspace
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_6.png)
 
 Step 4.1 : Once the workspace is created.<br>
-Click the menu icon in the upper-right corner of the tile for the imported workspace, and then select View details.
+Click the menu icon in the upper-right corner of the tile for the created workspace, and then select View details.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspacedetails.png)
 Step 4.2 : Then copy the workspae id and then paste in the main.js code in line no.23.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspaceid.png)

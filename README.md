@@ -21,9 +21,9 @@ Step 4 : Click on the create button, then enter the name for the workspace
 Step 4.1 : Once the workspace is created.<br>
 Click the menu icon in the upper-right corner of the tile for the created workspace, and then select View details.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspacedetails.png)
-Step 4.2 : Then copy the workspae id and then paste in the main.js code in line no.23.
+Step 4.2 : Then copy the workspae id and then paste in the main.js code in line number 23 for the variable "url".<br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_workspaceid.png)
-Step 4.3 : Replace the highlighted id with your workspace.
+Step 4.3 : Replace the highlighted id with your workspace id.<br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_code.png)
 		
 Step 5 : Open the created workspace and click on Intents start entering the intents.

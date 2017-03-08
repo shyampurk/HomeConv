@@ -35,6 +35,8 @@
 			$("#respMsg").text(m.Entity +" light is "+m.Status);
 		}else if(m.Type == "error"){
 			$("#respMsg").text(m.Message);
+		}else if(m.Type == "start"){
+			$("#respMsg").text(m.Message);
 		}else if(m.Type == "control"){
 			$("#respMsg").text(m.Message +" bulb");
 		}

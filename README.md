@@ -69,19 +69,11 @@ and then click on "Room_on" node, then select "Go to condition".<br>
 
 Your "turnon" node is created
 
-Step 9 : In the similar way you can create blocks for the "turnoff" and "is" <br>intents by repeating the steps from 8.2 to 8.4 by doing the following changes in those steps.
+Step 9 : In the similar way you can create blocks for the "turnoff" and "is" intents by repeating the steps from 8.2 to 8.4.<br>
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_turnoffpic.png)<br>
+![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_ispic.png)<br>
 
-Step 9.1 : "turnoff" intent <br>
-	step 8.2  instead of "#turnon(create new condition)"  replace with "#turnoff(create new condition)"<br>
-	step 8.3  instead of "Turning ON @room"  replace with "Turning OFF @room"<br>
-	step 8.4  instead of "Turn on intent node"  replace with "Turn off intent node"<br>
-			  instead of "Room_on"  replace with "Room_off"<br>
-	
-Step 9.2 : "is" intent	<br>
-	step 8.2  instead of "#turnon(create new condition)" replace with "#is(create new condition)"<br>
-	step 8.3  instead of "Turning ON @room" replace with "Status @room"<br>
-	step 8.4  instead of "Turn on intent node" replace with "status query node"<br>
-			  instead of "Room_on" replace with "is"<br>
+
 		 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_dialogsblocks.png)
 

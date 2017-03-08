@@ -74,13 +74,13 @@ Step 9 : In the similar way you can create blocks for the "turnoff" and "is" <br
 Step 9.1 : "turnoff" intent <br>
 	step 8.2  turnon(create new condition)  - turnoff(create new condition)<br>
 	step 8.3  "Turning ON @room"            - "Turning OFF @room"<br>
-	step 8.4  "Turnon_intent_node"          - "Turnoff_intent_node"<br>
+	step 8.4  "Turn on intent node"          - "Turn off intent node"<br>
 			  "Room_on"                     - "Room_off"<br>
 	
 Step 9.2 : "is" intent	<br>
 	step 8.2  turnon(create new condition)  - is(create new condition)<br>
 	step 8.3  "Turning ON @room"            - "Status @room"<br>
-	step 8.4  "Turnon_intent_node"          - "status_query_node"<br>
+	step 8.4  "Turn on intent node"          - "status query node"<br>
 			  "Room_on"                     - "is"<br>
 		 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_dialogsblocks.png)

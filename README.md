@@ -56,12 +56,14 @@ Step 8 : To create another node click on the plus symbol down the first node.
 Step 8.1 : Write the Name for the block in the name field.<br>
 Step 8.2 : In the Trigger field write "#turnon(create new condition)", then close the block.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on1.png)
-Step 8.3 : Click on the plus next to the block write the name in the name field, and write the "@room(create new condition)"  condition under the Trigger field and write "Turning ON @room" under the responses.
+Step 8.3 : Click on the plus next to the block write the name in the name field, and write the "@room(create new condition)"  condition under the Trigger field <br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on2.png)
+and write "Turning ON @room" under the responses.<br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on3.png)
-Step 8.4 : Then select the "Jumpto" symbol on "Turn on Intent node" and then click on "Room_on" node then select "Go to condition".	
+Step 8.4 : Then select the "Jumpto" symbol on "Turn on Intent node"<br> 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on4.png)
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on5.png)
+and then click on "Room_on" node then select "Go to condition".<br>	
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on6.png)
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on7.png)
 

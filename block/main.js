@@ -105,7 +105,7 @@ export default (request) => {
 
     /*
         Name - conv_call
-        Description - Function used to conversation api call and sending replies to users
+        Description - Function used to invoke conversation api call and send replies to users
         Parameters - http_options : Options like username and password for api call                     
 
     */

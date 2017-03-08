@@ -6,8 +6,8 @@ export default (request) => {
     const db = require("kvstore"); //Database module
     
     
-    var username = '4939be65-d9dc-434a-bc0b-1354edcaf65f'; // Username for the conversation api
-    var password = '5yC8uRMgqkrD';                         // password for the conversation api
+    var username = '700d1afb-465b-4814-aa85-c1c8dbf8ab1d'; // Username for the conversation api
+    var password = 'HnXJIcPt8grA';                         // password for the conversation api
     var auth = basicAuth.basic(username,password);
     
     // variables for functional purpose.
@@ -17,10 +17,11 @@ export default (request) => {
     var control = "control";
     var monitor = "monitor";
     var error = "error";
+    var start = "start";
 
 
     // URL for the conversation api.
-    const url = "https://gateway.watsonplatform.net/conversation/api/v1/workspaces/f4159120-5cd4-4c3f-9d72-9c763d42d059/message?version=2016-09-20";
+    const url = "https://gateway.watsonplatform.net/conversation/api/v1/workspaces/6fd364a5-748f-47c3-8071-3ccb3bff41a9/message?version=2017-02-03";
 
     // The field name to store the context of the message body.
     var fieldname = "context";
@@ -49,7 +50,6 @@ export default (request) => {
     if (request.message.Command == "start"){
         
         
-        request.message.Command = "turn on";            
         var context_value = {};
         db.set(fieldname,context_value);
                     
@@ -117,76 +117,69 @@ export default (request) => {
                 // Updating the context field in the database with the new context from the message body.
                 db.set(fieldname,body.context);
                 
-                // Extracting intents from the API reply.
-                intent = body.intents[0].intent;
-                console.log("THE INTENT ---->",intent);
                 
-                // Checking for the turnon/turnoff conditions.
-                if (intent == "turnon" || intent == "turnoff")
-                {
-                    // Extracting the Entities.
-                    entity = body.entities;
-                    if (entity.length!==0)
-                        {
-                            // Forming the control message - incase if user wants to turnon/turnoff the bulb in a room.
-                            message = {"Type":control,"Intent":intent,"Entity":body.entities[0].value,"Message":body.output.text[0]};
-                            // message publish function call
-                            BroadcastMessage(pubchannel,message);
-                            // Setting room state in the database ({"roomname":state} example {"bedroom":"on"})
-                            db.set(body.entities[0].value,body.output.text[0].split(" ")[1]);              
-                        }
-                    else{
-                        // Forming error message - If user enters a room that is not predefined or anyother irrelavant messages 
-                        message = {"Type":error,"Intent":intent,"Entity":body.entities,"Message":body.output.text[0]};
-                        // message publish function call.
-                        BroadcastMessage(pubchannel,message);
-                        
-                    }    
-                }
-                
-                
-                // Checking for the monitoring messages
-                if(intent == "is")
-                {
-                    // Extracting the entities. 
-                   entity = body.entities;
-
-                    if (entity.length !== 0)
-                    {
-                    db.get(body.entities[0].value).then((database_value)=>{
-                    console.log("FETCHED DATABASE VALUE IN MONITORING-->",database_value);
-                    if (database_value)
-                        {
-                        // Forming monitoring message - in case if user asks for the bulb status in a room.
-                        message = {"Type":monitor,"Entity":body.entities[0].value,"Status":database_value,"Message":body.output.text[0]};
-                              
-                        }
-                    else{
-                        // Forming monitoring not available message - incase if the room status is not available in the database. 
-                        message = {"Type":monitor,"Entity":body.entities[0].value,"Status":"Not available","Message":body.output.text[0]};
-                    }
-                    // message publish function call.
-                    BroadcastMessage(pubchannel,message);
-                    });// db call ending    
-
-                    }
-                   else{
-                        // Forming error message - in the case if input does not contain any entity(means room name)
-                        message = {"Type":error,"Entity":body.entities,"Status":"Not available","Message":body.output.text[0]};
-                        // message publish function call.
-                        BroadcastMessage(pubchannel,message);
-                   }  
-
+                if (body["intents"].length !==0)
                     
-                }
-
-                // Checking for the offtopic(not related to the conversation) messages.
-                if (intent == "offtopic")
                 {
-                    // Forming error message - in the case if input does not have related commands predefined
-                    message = {"Type":error,"Message":body.output.text[0]};
-                    // message publish function call.
-                    BroadcastMessage(pubchannel,message);
+                    // Extracting intents from the API reply.
+                
+                    intent = body.intents[0].intent;
+                    console.log("THE INTENT ---->",intent);
+                
+                    // Checking for the turnon/turnoff conditions.
+                    if (intent == "turnon" || intent == "turnoff")
+                    {
+                        
+                        // Forming the control message - incase if user wants to turnon/turnoff the bulb in a room.
+                        message = {"Type":control,"Intent":intent,"Entity":body.entities[0].value,"Message":body.output.text[0]};
+                        // message publish function call
+                        BroadcastMessage(pubchannel,message);
+                        // Setting room state in the database ({"roomname":state} example {"bedroom":"on"})
+                        db.set(body.entities[0].value,body.output.text[0].split(" ")[1]);              
+                            
+                    }
+                    
+                    
+                    // Checking for the monitoring messages
+                    if(intent == "is")
+                    {
+                       db.get(body.entities[0].value).then((database_value)=>{
+                        console.log("FETCHED DATABASE VALUE IN MONITORING-->",database_value);
+                        if (database_value)
+                            {
+                            // Forming monitoring message - in case if user asks for the bulb status in a room.
+                            message = {"Type":monitor,"Entity":body.entities[0].value,"Status":database_value,"Message":body.output.text[0]};
+                                  
+                            }
+                        else{
+                            // Forming monitoring not available message - incase if the room status is not available in the database. 
+                            message = {"Type":monitor,"Entity":body.entities[0].value,"Status":"Not available","Message":body.output.text[0]};
+                        }
+                        // message publish function call.
+                        BroadcastMessage(pubchannel,message);
+                        });// db call ending    
+
+                    }
+                } 
+
+                // Checking for the irrelevant(not related to the conversation) messages.
+                else 
+                {
+                    console.log("INTENT",body.intents);    
+                    if (body.output.nodes_visited[0] == "Start Node")
+                    {
+                        // Forming starting message - for the initial message.
+                        message = {"Type":start,"Message":body.output.text[0]};
+                        // message publish function call.
+                        BroadcastMessage(pubchannel,message);    
+                    }
+                    else{
+                        // Forming error message - in the case if input does not have related commands predefined
+                        message = {"Type":error,"Message":body.output.text[0]};
+                        // message publish function call.
+                        BroadcastMessage(pubchannel,message);   
+                    }
+                    
                 }
 
             });

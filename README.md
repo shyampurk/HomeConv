@@ -67,7 +67,7 @@ Step 8.4 : Then select the "Jumpto" symbol on "Turn on Intent node" and then cli
 
 Your "turnon" node is created
 
-Step 9 : In the similar way you can create blocks for the "turnoff" and "is" intents by repeating the steps from 8.2 to 8.4 by doing the following changes in those steps.
+Step 9 : In the similar way you can create blocks for the "turnoff" and "is" <br>intents by repeating the steps from 8.2 to 8.4 by doing the following changes in those steps.
 
 Step 9.1 : "turnoff" intent <br>
 	step 8.2  turnon(create new condition)  - turnoff(create new condition)<br>

@@ -153,7 +153,7 @@ export default (request) => {
                             }
                         else{
                             // Forming monitoring not available message - incase if the room status is not available in the database. 
-                            message = {"Type":monitor,"Entity":body.entities[0].value,"Status":"Not available","Message":body.output.text[0]};
+                            message = {"Type":monitor,"Entity":body.entities[0].value,"Status":"Unknown","Message":body.output.text[0]};
                         }
                         // message publish function call.
                         BroadcastMessage(pubchannel,message);

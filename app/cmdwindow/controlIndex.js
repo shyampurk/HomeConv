@@ -38,7 +38,7 @@
 		}else if(m.Type == "start"){
 			$("#respMsg").text(m.Message);
 		}else if(m.Type == "control"){
-			$("#respMsg").text(m.Message +" bulb");
+			$("#respMsg").text(m.Message +" light");
 		}
 	};
 

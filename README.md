@@ -1,10 +1,11 @@
-# HomeConv
+# Home Automation Virtual Agent
 A Chat Interface for sending Commands to Your Home via the Watson Conversation API 
 
-# Conversation api
+# Watson Conversation Service
 
+Follow the steps below to setup the conversation workspace and dialog. 
 
-Step 1 : Open your Bluemix with valid credentials and goto catalog, and Select the Conversation under Watson services.
+Step 1 : Log on to Bluemix with your IBM ID and go to catalog, and select "Conversation" under Watson services.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_1.png)
 
 Step 2 : Enter the service name and make the connect to field "leave unbound" and scroll down and select the Free pricing plan, then click on Create button.

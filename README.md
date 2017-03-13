@@ -8,9 +8,18 @@ PubNub BLOCK acts as the virtual agent and the code that runs within the BLOCK i
 
 Follow the steps below to setup the conversation workspace and dialog.  
 
-	- In the step description for conversation service, the word block refers to the dialog creation node. This is not to be confused with the word BLOCK which refers to the PubNub microservice.
+	- In the step description for conversation service, the word block refers to the dialog creation node. 
+	  This is not to be confused with the word BLOCK (in all caps) which refers to the PubNub microservice.
 
-	- Pay attention to the step 4.2 where you have to copy the conversation workspace credentials into your BLOCK code. This is required for the virtual agent to correctly invoke the conversation service and decipher the commands. 
+	- Once the conversation service is created, you need to copy some credentials from your conversation workspace
+	  to the BLOCK code. This is required for the virtual agent to correctly invoke the conversation service and 
+	  decipher the commands. There are three parameters to be copied
+	  
+	  a. Pay attention to the step 4.2 where you have to copy the conversation workspace credentials into your BLOCK code.
+	  b. Refer to the "Conversation API Credentials" section below to copy your conversation workspace's username and password
+	     to the BLOCK code.
+	  
+	  
 
 ## Watson Conversation Service
 
@@ -68,7 +77,7 @@ Step 8 : To create another node click on the plus symbol down the first node.
 Step 8.1 : Write the Name for the node in the name field.<br>
 Step 8.2 : In the Trigger field write "#turnon(create new condition)", then close the node.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on1.png)
-Step 8.3 : Click on the plus next to the node write the name in the name field, and write the "@room(create new condition)"  condition in the Trigger field, <br>
+Step 8.3 : Click on the plus next to the node. Write the name in the name field as shown and write the "@room(create new condition)"  condition in the Trigger field, <br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on2.png)
 Write "Turning ON @room" under the responses.<br>
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on3.png)
@@ -97,12 +106,12 @@ Enter the name in the name field,condition will be predefined in the trigger fie
 field write "sorry i am not trained to anwer this question" and "Command not identified".
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_anything2.png)
 
-Note : Here you can see the response variations sequential and random, you can select any of the option.
+Note : Here you can see the response variations as sequential and random. You can select any of the option.
 sequential - Will give response in a sequence manner<br>
-random - will give response in random
+random - Will give response in random
 
 
-# API KEYS
+## Conversation API Credentials
 
 Step 1 : Open the block code [here](https://github.com/shyampurk/HomeConv/blob/master/block/main.js)<br>
 Step 2 : Open the conversation api service and goto the "Service Credentials".<br>

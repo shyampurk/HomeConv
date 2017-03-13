@@ -1,7 +1,7 @@
 #Home Automation Event Handler for PubNub BLOCKS
 
 # Pubnub block creation
-Step 1 : Login to the Pubnub account with the valid credentials.<br>
+Step 1 : Login to the [PubNub admin page](https://admin.pubnub.com/#/login) with valid credentials.<br>
 Step 2 : Click the "CREATE NEW APP" by giving a name to your APP.<br>         
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_1.png)
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_2.png)         
@@ -20,10 +20,10 @@ Step 7 : Give the Name of the Event handler, Channel to communicate with the blo
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_7.png)
 Step 8 : Click on the newly created Event handler.
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_8.png)
-Step 9 : Copy the block code in the text area from [here](https://github.com/shyampurk/HomeConv/blob/master/block/main.js), and save it. 
+Step 9 : Copy the block code in the text area from [here](https://github.com/shyampurk/HomeConv/blob/master/block/main.js), and save it. before saving, ensure that you have filled in your conversation service credentials. 
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_9.png)
 Step 10 : Click on the Start block button(top right) to start the block.
          ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/blocks/b_10.png)
 
-Your block code is now running
+Your PubNub BLOCK is now running. The virtual agent is ready to accept dialogs from the user. 
 

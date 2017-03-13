@@ -1,9 +1,20 @@
 # Home Automation Virtual Agent
-A Chat Interface for sending Commands to Your Home via the Watson Conversation API 
+A Chat Interface for sending commands to your home devices via the Watson Conversation API 
 
-# Watson Conversation Service
+## Setup
+Before you try out this application, you will need to setup your Watson conversation service workspace and a PubNub BLOCK.
 
-Follow the steps below to setup the conversation workspace and dialog. 
+PubNub BLOCK acts as the virtual agent and the code that runs within the BLOCK is [here](/block/main.js). Refer to this [README file](block/README.md) for setting up and executing your BLOCK. 
+
+Follow the steps below to setup the conversation workspace and dialog.  
+
+	- In the step description for conversation service, the word block refers to the dialog creation node. This is not to be confused with the word BLOCK which refers to the PubNub microservice.
+
+	- Pay attention to the step 4.2 where you have to copy the conversation workspace credentials into your BLOCK code. This is required for the virtual agent to correctly invoke the conversation service and decipher the commands. 
+
+## Watson Conversation Service
+
+
 
 Step 1 : Log on to Bluemix with your IBM ID and go to catalog, and select "Conversation" under Watson services.
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_1.png)

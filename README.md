@@ -49,7 +49,9 @@ Open the "Home Automation" service then click on the "Launch tool" button.
 Click on the create button, then enter the name for the workspace
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_5.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_6.png)
 
 ### Step 4.1 : 
@@ -81,18 +83,26 @@ You can enter the intents like the following picture (following picture shown fo
 You can follow the same procedure for the remaining intents.
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_turnoff.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_is.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_intents.png)
 
 ## Step 6 : 
 Open Entities tab, and click on "Create new" button then start entering the entities.
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_10.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_11.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_12.png)
 
 You have created an Entity.
@@ -142,13 +152,17 @@ Write "Turning ON @room" under the responses.
 Then select the "Jumpto" icon on "Turn on intent node"
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on4.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on5.png)
 
 and then click on "Room_on" node, then select "Go to condition".	
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on6.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_on7.png)
 
 Your "turnon" node is created
@@ -157,9 +171,13 @@ Your "turnon" node is created
 In the similar way you can create blocks for the "turnoff" and "is" intents by repeating the steps from 8.2 to 8.4.
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_turnoffpic.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_ispic.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_dialogsblocks.png)
 
 ## Step 10 : 

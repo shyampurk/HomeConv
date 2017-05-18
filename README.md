@@ -34,7 +34,9 @@ Log on to Bluemix with your IBM ID and go to catalog, and select "Conversation" 
 Enter the service name and make the connect to field "leave unbound" and scroll down and select the Free pricing plan, then click on Create button.
 
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_2.png)
+
 <hr>
+
 ![alt-tag](https://github.com/shyampurk/HomeConv/blob/master/screenshots/conv_api/conv_api_3.png)
 
 
